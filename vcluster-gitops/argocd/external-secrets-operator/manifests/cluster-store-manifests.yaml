@@ -62,6 +62,12 @@ spec:
     kubernetes:
       # with this, the store is able to pull only from `eso-demo` namespace
       remoteNamespace: eso-demo
+      server:
+        caProvider:
+          type: ConfigMap
+          name: kube-root-ca.crt
+          key: ca.crt
+          namespace: eso-demo
       auth:
         serviceAccount:
           name: "eso-demo"
